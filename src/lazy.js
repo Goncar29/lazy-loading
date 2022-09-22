@@ -3,10 +3,14 @@ const isIntersecting = (entry) => {
 };
 
 const accion = (entry) => {
-    const nodo = entry.target
+    const container = entry.target; // el container es el DIV
     console.log('se da la accion')
+    const image = container.firstChild;
+    const url = imagen.dataset.src; //
+    // carga la imagen
+    imagen.src = url;
 
-    observer.unobserve(nodo) // deja de escuchar la imagen despues que la cargo
+    observer.unobserve(container) // deja de escuchar la imagen despues que la cargo
 };
 
 const observer = new IntersectionObserver((entries) => {
