@@ -22,7 +22,7 @@ const createImageNode = () => {
 const nuevaImagen = createImageNode();
 const mountNode = document.getElementById('images');
 
-const addButton = document.querySelector('button');
+const addButton = document.querySelector('#agregarImagen');
 
 const addImage = () => {
     const newImage = createImageNode();
@@ -33,3 +33,17 @@ const addImage = () => {
 addButton.addEventListener('click', addImage);
 
 
+const borra = document.querySelector('#borrarUno')
+const borrarUno = () => {
+    const aEliminar = document.querySelector('div.p-4')
+    aEliminar.remove()
+}
+
+borra.addEventListener('click', borrarUno)
+
+const limpiarImagenes = document.querySelector('#limpiarImagenes')
+const limpiar = () => {
+    
+}
+
+limpiarImagenes.addEventListener('click', limpiar)
