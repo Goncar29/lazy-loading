@@ -33,17 +33,22 @@ const addImage = () => {
 addButton.addEventListener('click', addImage);
 
 
+
 const borra = document.querySelector('#borrarUno')
 const borrarUno = () => {
     const aEliminar = document.querySelector('div.p-4')
     aEliminar.remove()
+    console.log('Se borra un elemento')
 }
 
 borra.addEventListener('click', borrarUno)
 
 const limpiarImagenes = document.querySelector('#limpiarImagenes')
 const limpiar = () => {
-    
+    for (let i = 0; i < 5; i++) {
+        const aEliminar = document.querySelector('div.p-4')
+        aEliminar.remove()
+    }
 }
 
 limpiarImagenes.addEventListener('click', limpiar)
