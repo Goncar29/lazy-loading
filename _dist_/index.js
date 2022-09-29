@@ -4,6 +4,7 @@ const min = 1
 const max = 123
 const random = () => Math.floor(Math.random() * (max - min) + min)
 
+
 const createImageNode = () => {
     const container = document.createElement('div');
     container.className = 'p-4';
@@ -19,6 +20,7 @@ const createImageNode = () => {
     return container;
 }
 
+
 const nuevaImagen = createImageNode();
 const mountNode = document.getElementById('images');
 
@@ -33,7 +35,7 @@ const addImage = () => {
 addButton.addEventListener('click', addImage);
 
 
-
+// Eliminamos de a una imagen creadas, la primera en fila
 const borra = document.querySelector('#borrarUno')
 const borrarUno = () => {
     const aEliminar = document.querySelector('div.p-4')
@@ -43,12 +45,16 @@ const borrarUno = () => {
 
 borra.addEventListener('click', borrarUno)
 
+// Eliminamos todas las imagenes creadas
 const limpiarImagenes = document.querySelector('#limpiarImagenes')
-const limpiar = () => {
-    for (let i = 0; i < 5; i++) {
-        const aEliminar = document.querySelector('div.p-4')
-        aEliminar.remove()
-    }
+const cleanImages = () => {
+
+    console.log(mountNode.childNodes);
+
+    [...mountNode.childNodes].forEach(child => {
+        child.remove();
+    }) 
+
 }
 
-limpiarImagenes.addEventListener('click', limpiar)
+limpiarImagenes.addEventListener('click', cleanImages)
