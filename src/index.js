@@ -39,8 +39,10 @@ addButton.addEventListener('click', addImage);
 const borra = document.querySelector('#borrarUno')
 const borrarUno = () => {
     const aEliminar = document.querySelector('div.p-4')
-    aEliminar.remove()
-    console.log('Se borra un elemento')
+    if(aEliminar != null) {
+        aEliminar.remove()
+        console.log('Se borra un elemento')
+    }
 }
 
 borra.addEventListener('click', borrarUno)
